@@ -47,7 +47,7 @@ const Profile = () => {
         // 2. buat fungsi verifikasi token yang sama seperti di halaman home
         const verifikasi = async()=> {
           try {
-            const response = await axios.post('http://localhost:3001/verify', {token : localStorage.getItem('token')})
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/verify`, {token : localStorage.getItem('token')})
             console.log(localStorage.getItem('token'))
             if (response.status == 200){
               setIsLogin(true)
